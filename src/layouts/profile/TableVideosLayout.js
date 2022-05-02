@@ -286,7 +286,7 @@ export default function TableVideosLayout() {
                     console.log(currentRow)
                     API.put(`/videos/${currentRow.id}`, currentRow)
                         .then((data) => {
-                                enqueueSnackbar("Successfully", { variant: 'success' });
+                                enqueueSnackbar("Success!", { variant: 'success' });
                                 closeEditVideo();
                             },
                             (error) => {

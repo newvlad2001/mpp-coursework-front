@@ -35,7 +35,6 @@ export default function UserPage()
                         v.push(item)
                     })
                     setVideosData(v);
-                    enqueueSnackbar("Video uploaded", {variant: "info"});
                     loadUserData();
                 }, (error) => {
                     enqueueSnackbar(error.response.data.error, {variant: "error"});
@@ -47,7 +46,6 @@ export default function UserPage()
         API.get("users/" + userId)
             .then((response) => {
                     setUserData(response.data.data);
-                    enqueueSnackbar("User data uploaded", {variant: "info"});
                     setLoading(false);
                 }, (error) => {
                     enqueueSnackbar(error.response.data.error, {variant: "error"});
